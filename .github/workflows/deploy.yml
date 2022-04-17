@@ -33,7 +33,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: cv_website
-          path: './cv_website'
+          path: './public'
 
   deploy:
     runs-on: ubuntu-latest
