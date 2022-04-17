@@ -32,7 +32,7 @@ jobs:
           args: --minify --buildDrafts
       - uses: actions/upload-artifact@master
         with:
-          name: cv_webapp
+          name: cv-webapp
           path: './public'
 
   deploy:
