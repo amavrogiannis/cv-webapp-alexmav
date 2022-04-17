@@ -42,7 +42,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: cv-website
+          name: cv-webapp
           path: './webapp'
       - uses: jakejarvis/s3-sync-action@master
         with:
