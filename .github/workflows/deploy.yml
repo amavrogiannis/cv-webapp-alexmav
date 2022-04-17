@@ -32,8 +32,8 @@ jobs:
           args: --minify --buildDrafts
       - uses: actions/upload-artifact@master
         with:
-          name: cv_webapp
-          path: './publish'
+          name: cv_website
+          path: './cv_website'
 
   deploy:
     runs-on: ubuntu-latest
