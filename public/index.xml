@@ -28,5 +28,15 @@ It makes use of a variety of open source projects including:
  Hosting this website using AWS:  Route 53 CloudFront S3 Bucket Certificate Manager   CI/CD Pipeline method:  Terraform GitHub Actions   Website Framework:  Hugo Template    Here is a link to my GitHub.</description>
     </item>
     
+    <item>
+      <title>Site operation</title>
+      <link>https://cv.alexmav.co.uk/operation/</link>
+      <pubDate>Sun, 17 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://cv.alexmav.co.uk/operation/</guid>
+      <description>As you can see the operation for this website, is fast, secure and reliable. The structure was simple, which I use Hugo configuration to apply my changes and then Huogo takes over in loading the template and make it look nice.
+The stack behind the scenes, is AWS. In this stage, the site is hosted via AWS S3 Static hosting but the complicated part comes from the CI/CD pipeline being set up.</description>
+    </item>
+    
   </channel>
 </rss>
