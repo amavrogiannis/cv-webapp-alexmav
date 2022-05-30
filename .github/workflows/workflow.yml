@@ -38,6 +38,12 @@ jobs:
         with:
           name: webapp
           path: './public'
+      # Download Artifacts
+      - name: Download artifact
+        uses: actions/download-artifact@master
+        with:
+          name: webapp
+          path: './public'
 
 
   DeployTest:
@@ -48,12 +54,6 @@ jobs:
       name: Test
       url: 'https://test.alexmav.co.uk'
     steps:
-      # Download Artifacts
-      - name: Download artifact
-        uses: actions/download-artifact@master
-        with:
-          name: webapp
-          path: './public'
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
