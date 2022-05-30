@@ -4,19 +4,18 @@ version: 2.1
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  build: 
-    docker: 
-      - image: z0li/hugo-builder:latest
-    working_directory: /src
-    environment: 
-      HUGO_BUILD_DIR: /src/public
+  deploy:
+    docker:
+      - image: cimg/base
     steps:
-      - add_ssh_keys:
-          fingerprints: $GITHUB_TOKEN
-      - checkout
-      - run: git submodule update --init
-      - run: hugo -v -s /src -d $HUGO_BUILD_DIR
-      - run: 
-          name: Testing generated html files
-          command: htmlproofer $HUGO_BUILD_DIR --allow-hash-href --check-html --empty-alt-ignore --disable-external
+      - attach_workspace:
+          at: my-site
+      - run: ls -lah my-site
+orbs:
+  hugo: circleci/hugo@0.1
+workflows:
+  main:
+    jobs:
+      - hugo/build:
+          html-proofer: true
+          version: '0.55'
