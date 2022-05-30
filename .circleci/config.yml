@@ -8,16 +8,15 @@ jobs:
   build: 
     docker: 
       - image: z0li/hugo-builder:latest
-    working_directory: ~/src
+    working_directory: /src
     environment: 
-      HUGO_BUILD_DIR: ~/src/public
+      HUGO_BUILD_DIR: /src/public
     steps:
       - add_ssh_keys:
           fingerprints: $GITHUB_TOKEN
       - checkout
       - run: git submodule update --init
       - run: hugo -v -s /src -d $HUGO_BUILD_DIR
-      - run: hugo -v -d $HUGO_BUILD_DIR
       - run: 
           name: Testing generated html files
           command: htmlproofer $HUGO_BUILD_DIR --allow-hash-href --check-html --empty-alt-ignore --disable-external
