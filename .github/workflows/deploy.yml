@@ -36,6 +36,7 @@ jobs:
           path: './public'
 
   deploy:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     needs: [build]
     steps:
