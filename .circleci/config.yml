@@ -5,22 +5,15 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+  build: 
+    docker: 
+      - image: cibuilds/hugo:latest
+    working_directory: ~/hugo
+    environment: 
+      HUGO_BUILD_DIR: ~/hugo/public
     steps:
+      - run: apt-get update -y && apt-get install -y --no-install-recommends git
       - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
+      - run: git submodule sync && git submodule update --init
+      - run: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
+      - run: htmlproofer $HUGO_BUILD_DIR --allow-hash-href --check-html --empty-alt-ignore --disable-external
