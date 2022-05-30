@@ -18,6 +18,5 @@ workflows:
   main:
     jobs:
       - hugo/build:
-          html-proofer: false
+          html-proofer: true
           version: '0.55'
-          check-html: true
