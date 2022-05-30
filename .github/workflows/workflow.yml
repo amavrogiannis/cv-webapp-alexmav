@@ -42,7 +42,7 @@ jobs:
 
   DeployTest:
     name: Deploy to test.alexmav.co.uk
-    if: github.event_name == 'pull_request' && contains(toJson(github.event.commits), github.event.ref == 'refs/heads/main' && contains(toJson(github.event.commits)
+    if: github.event_name == 'pull_request', github.event.ref == 'refs/heads/main'
     needs: [Build]
     runs-on: ubuntu-latest
     environment:
