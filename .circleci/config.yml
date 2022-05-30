@@ -10,6 +10,7 @@ deploy:
     - attach_workspace:
         at: my-site
     - run: ls -lah my-site
+    - run: git submodule update --recursive --remote
 orbs:
   hugo: circleci/hugo@0.1
 version: 2.1
