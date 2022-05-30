@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  Build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -24,13 +24,71 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        with: 
+          submodules: true
+          fetch-depth: 0
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      # Hugo Builder
+      - uses: jakejarvis/hugo-build-action@master  # ...or replace 'master' with a full version tag, such as: v0.64.1
+        with:
+          args: --minify --buildDrafts
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      # Upload artifacts
+      - uses: actions/upload-artifact@master
+        with:
+          name: webapp
+          path: './public'
+
+
+  DeployTest:
+    name: Deploy to test.alexmav.co.uk
+    if: github.event_name == 'pull_request' && contains(toJson(github.event.commits), github.event.ref == 'refs/heads/main' && contains(toJson(github.event.commits)
+    needs: [Build]
+    runs-on: ubuntu-latest
+    environment:
+      name: Development
+      url: 'https://test.alexmav.co.uk'
+    steps:
+      # Download Artifacts
+      - name: Download artifact
+        uses: actions/download-artifact@master
+        with:
+          name: webapp
+          path: './public'
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          name: Test
+          url: 'https://test.alexmav.co.uk'
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_TEST }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{env.AWS_REGION}}   # optional: defaults to us-east-1
+          SOURCE_DIR: ${{env.SOURCE_DIR}}      # optional: defaults to entire repository set to "./public"
+  
+  DeployProd:
+    name: Deploy to cv.alexmav.co.uk
+    needs: [DeployTest]
+    runs-on: ubuntu-latest
+    environment:
+      name: Production
+      url: 'https://cv.alexmav.co.uk'
+    steps:
+      # Download Artifacts
+      - name: Download artifact
+        uses: actions/download-artifact@master
+        with:
+          name: webapp
+          path: './public'
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          name: Test
+          url: 'https://cv.alexmav.co.uk'
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{env.AWS_REGION}}   # optional: defaults to us-east-1
+          SOURCE_DIR: ${{env.SOURCE_DIR}}      # optional: defaults to entire repository set to "./public"
