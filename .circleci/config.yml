@@ -9,4 +9,4 @@ jobs:
       - image: jakejarvis/hugo-extended:latest
     steps:
       - checkout
-      - run: --minify --buildDrafts
+      - arguments: --minify --buildDrafts
