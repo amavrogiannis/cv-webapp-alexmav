@@ -1,8 +1,7 @@
-FROM klakegg/hugo:latest
-FROM nginx:latest
+FROM circleci/python:buster
 
-WORKDIR /usr/share/nginx/html
-COPY . /usr/share/nginx/html/*
+WORKDIR /tmp
 
-
-EXPOSE 1313/tcp
+RUN curl -LO https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_0.74.3_Linux-64bit.deb
+RUN sudo dpkg -i hugo_0.74.3_Linux-64bit.deb
+RUN pip install awscli --upgrade --user
