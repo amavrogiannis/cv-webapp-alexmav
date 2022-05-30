@@ -6,14 +6,7 @@ jobs:
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
   build:
     docker:
-      - image: cibuilds/hugo:latest
-    working_directory: ~/hugo
-    environment:
-      HUGO_BUILD_DIR: ~/hugo/public
+      - image: jakejarvis/hugo-extended:latest
     steps:
-      # install git
-      - run: sudo apt -y update && sudo apt install -y git
-      # checkout the repository
       - checkout
-      # install git submodules for managing third-party dependencies
-      - run: git submodule sync && git submodule update --init
+      - run: --minify --buildDrafts
