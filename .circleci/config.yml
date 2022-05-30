@@ -12,6 +12,8 @@ jobs:
     environment: 
       HUGO_BUILD_DIR: ~/hugo/public
     steps:
+      - add_ssh_keys:
+          fingerprints: $GITHUB_TOKEN
       - checkout
       - run: git submodule update --init
       - run: hugo -v -s /src -d /src/public
