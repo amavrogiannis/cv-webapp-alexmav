@@ -12,7 +12,7 @@ jobs:
     environment: 
       HUGO_BUILD_DIR: ~/hugo/public
     steps:
-      - run: apt-get update -y && apt-get install -y --no-install-recommends git
+      - run: apt-get update && apt-get install -y --no-install-recommends git
       - checkout
       - run: git submodule sync && git submodule update --init
       - run: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
