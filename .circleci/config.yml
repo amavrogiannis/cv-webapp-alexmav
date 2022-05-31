@@ -11,9 +11,7 @@ jobs:
     steps:
       - github-cli/clone:
           repo: https://github.com/amavrogiannis/cv-webapp-alexmav.git 
-          dir: hugo 
       - hugo/hugo-build:
-          source: hugo
           extra-flags: D 
           destination: ./public 
 
@@ -22,7 +20,6 @@ workflows:
       jobs:
         - example-job
         - hugo/build:
-            source: hugo
             html-proofer: true 
             persist-to-workspace: true 
             destination: ./public 
