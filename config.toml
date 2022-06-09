@@ -67,8 +67,8 @@ paginate     = 10
   [[menu.main]]
     identifier = "experience"
     name       = "Experience"
-    url        = "/about/experience.html"
+    url        = "/experience/index.html"
   [[menu.main]]
     identifier = "education"
     name       = "Education"
-    url        = "/about/experience.html"
+    url        = "/experience/index.html"
