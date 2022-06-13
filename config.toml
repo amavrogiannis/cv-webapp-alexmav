@@ -64,3 +64,11 @@ paginate     = 10
     identifier = "Website"
     name       = "Website"
     url        = "/Operation/index.html"
+  [[menu.main]]
+    identifier = "experience"
+    name       = "Experience"
+    url        = "/experience/index.html"
+  [[menu.main]]
+    identifier = "education"
+    name       = "Education"
+    url        = "/experience/index.html"
