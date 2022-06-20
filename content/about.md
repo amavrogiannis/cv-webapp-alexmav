@@ -19,12 +19,15 @@ I have pursued my career in different industries:
 
 In the early days, when AWS was getting popular, I was building my interest toward AWS Cloud and getting to learn more to it. After it's peak and more tech giants joined the Cloud market, I detected this will be a problem for many engineers, having to understand the services and the gui setup for each provider. 
 
-In my experience, I realised focusing myself with one or two providers may not be unique thing but to start learning Cloud Native Technologies: 
+As the market expands, there is a great majority of cloud native tools to use that are supported in any cloud host provider. Each one tool has a role, which overtime, makes it easier for any engineer manage their infrastructure in using the below tools: 
 * Infrastructure-as-a-Code -> Terraform
 * Containerasation -> Docker and Kubernetes
 * Deployment Implementation -> Ansible
 * Securty -> PrismaCloud
-* 
+* SAST Scanning -> CheckMarx, GitLab SAST
+* DAST Scanning -> BlackDuck, GitLab DAST
+
+
 
 
 
