@@ -7,7 +7,7 @@ date = "2022-06-09"
 
 ![graduation](/post/graduation.png)
 
-# University of Portsmouth
+## University of Portsmouth
 * **BSc (Hons) Computer Networks**
   * **Awarded upper second class**
 Notable modules – Windows Systems Configuration and Administration, Router and Switch Network architecture, Product design – Group project, WAN and VLAN solutions, Network simulation and traffic management, Network services administration and virtualisation. 
@@ -22,10 +22,10 @@ Notable modules – Windows Systems Configuration and Administration, Router and
 
   **Research:** IPv6 Monitoring Networks (awarded: upper second class)
 
-  # College of North West London
+  ## College of North West London
   * **BTEC Extended Diploma in IT Level 3**
     * **Awarded: Distinction* (D*D*D)**
   
-  # Further achivements: 
+  ## Further achivements: 
 
   * **AWS Certified Cloud Practitioner** - [Credly](https://www.credly.com/badges/62d78dae-579f-44d2-b40f-036bab7b5418?source=linked_in_profile)
