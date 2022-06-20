@@ -22,7 +22,7 @@ Notable modules – Windows Systems Configuration and Administration, Router and
   **Research:** IPv6 Monitoring Networks
 
 ### College of North West London
-  * **BTEC Extended Diploma in IT Level 3**
+* **BTEC Extended Diploma in IT Level 3**
   
 ### Further achivements: 
-  * **AWS Certified Cloud Practitioner** - [Credly](https://www.credly.com/badges/62d78dae-579f-44d2-b40f-036bab7b5418?source=linked_in_profile)
+* **AWS Certified Cloud Practitioner** - [Credly](https://www.credly.com/badges/62d78dae-579f-44d2-b40f-036bab7b5418?source=linked_in_profile)
