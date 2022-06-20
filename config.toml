@@ -61,14 +61,14 @@ paginate     = 10
     name       = "About"
     url        = "/about/index.html"
   [[menu.main]]
-    identifier = "Website"
+    identifier = "website"
     name       = "Website"
     url        = "/Operation/index.html"
-  [[menu.main]]
-    identifier = "experience"
-    name       = "Experience"
-    url        = "/experience/index.html"
   [[menu.main]]
     identifier = "education"
     name       = "Education"
     url        = "/education/index.html"
+  [[menu.main]]
+    identifier = "experience"
+    name       = "Experience"
+    url        = "/experience/index.html"
