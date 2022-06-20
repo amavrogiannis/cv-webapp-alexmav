@@ -27,7 +27,3 @@ As the market expands, there is a great majority of cloud native tools to use th
 * SAST Scanning -> CheckMarx, GitLab SAST
 * DAST Scanning -> BlackDuck, GitLab DAST
 
-
-
-
-

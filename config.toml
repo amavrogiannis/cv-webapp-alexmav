@@ -71,4 +71,4 @@ paginate     = 10
   [[menu.main]]
     identifier = "education"
     name       = "Education"
-    url        = "/experience/index.html"
+    url        = "/education/index.html"
