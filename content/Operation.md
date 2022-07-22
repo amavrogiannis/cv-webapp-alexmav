@@ -30,3 +30,20 @@ How does automation simplifies the process, and saves time:
 
 Here is an architecture image that you might find useful: 
 ![arch_pic](/post/arch_pic.png)
+
+
+Categorised Tech stack: 
+
+* Hosting this website using AWS:
+    * Route 53
+    * CloudFront
+    * S3 Bucket
+    * Certificate Manager
+* CI/CD Pipeline method: 
+    * Terraform
+    * GitHub Actions
+* Website Framework:
+    * [Hugo](https://gohugo.io)
+    * [Template](https://themes.gohugo.io/themes/hugo-theme-hello-friend-ng/#how-to-edit-the-theme)
+
+Here is a link to my [GitHub](https://github.com/amavrogiannis).

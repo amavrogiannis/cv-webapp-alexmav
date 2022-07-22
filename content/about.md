@@ -5,6 +5,8 @@ date = "2022-04-17"
   name = "AlexMav"
 +++
 
+![arch_pic](/post/southpark_about.gif)
+
 Welcome to my resume website. I am an enthusiast engineer, who enjoys building, testing and most important... DEPLOYING! 
 
 I am originally from London, and I chose my path to be an engineer mainly because I like to fix and building things that are based in computing and software. 
@@ -17,26 +19,11 @@ I have pursued my career in different industries:
 
 In the early days, when AWS was getting popular, I was building my interest toward AWS Cloud and getting to learn more to it. After it's peak and more tech giants joined the Cloud market, I detected this will be a problem for many engineers, having to understand the services and the gui setup for each provider. 
 
-In my experience, I realised focusing myself with one or two providers may not be unique thing but to start learning Cloud Native Technologies: 
+As the market expands, there is a great majority of cloud native tools to use that are supported in any cloud host provider. Each one tool has a role, which overtime, makes it easier for any engineer manage their infrastructure in using the below tools: 
 * Infrastructure-as-a-Code -> Terraform
 * Containerasation -> Docker and Kubernetes
 * Deployment Implementation -> Ansible
 * Securty -> PrismaCloud
-* 
-
-It makes use of a variety of open source projects including:
-
-* Hosting this website using AWS:
-    * Route 53
-    * CloudFront
-    * S3 Bucket
-    * Certificate Manager
-* CI/CD Pipeline method: 
-    * Terraform
-    * GitHub Actions
-* Website Framework:
-    * [Hugo](https://gohugo.io)
-    * [Template](https://themes.gohugo.io/themes/hugo-theme-hello-friend-ng/#how-to-edit-the-theme)
-
-Here is a link to my [GitHub](https://github.com/amavrogiannis).
+* SAST Scanning -> CheckMarx, GitLab SAST
+* DAST Scanning -> BlackDuck, GitLab DAST
 
