@@ -5,4 +5,3 @@ date = "2022-06-09"
   name = "AlexMav"
 +++
 
-Welcome to my website. Page is under development. 
