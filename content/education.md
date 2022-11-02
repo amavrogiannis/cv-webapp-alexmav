@@ -25,6 +25,6 @@ Notable modules – Windows Systems Configuration and Administration, Router and
 * **BTEC Extended Diploma in IT Level 3**
   
 ### Further achivements: 
-* **AWS Certified Cloud Practitioner** - [Credly](https://www.credly.com/badges/62d78dae-579f-44d2-b40f-036bab7b5418?source=linked_in_profile)
+* **AWS Certified Solutions Architect - Associate** - [Credly](https://www.credly.com/badges/5276aaa6-b6ee-4238-b6f6-b299fc7b558b/public_url)
 * **Hashicorp Cert: Terraform Associate** - [Credly](https://www.credly.com/badges/d7b16065-175d-4213-8457-83a1f8cd09a5/linked_in?t=rehq4g)
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5276aaa6-b6ee-4238-b6f6-b299fc7b558b" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+* **AWS Certified Cloud Practitioner** - [Credly](https://www.credly.com/badges/869d90e1-fb5d-4d6b-be29-b5e74f51146c/public_url)
