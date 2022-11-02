@@ -5,7 +5,8 @@ date = "2022-04-17"
   name = "AlexMav"
 +++
 
-![arch_pic](/post/southpark_about.gif)
+<!-- ![arch_pic](/post/southpark_about.gif) -->
+<img src="/post/southpark_about.gif" width="350px" height="350px"/>
 
 Welcome to my resume website. I am an enthusiast engineer, who enjoys building, testing and most important... DEPLOYING! 
 
