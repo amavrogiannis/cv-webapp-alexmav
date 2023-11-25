@@ -41,8 +41,8 @@ Categorised Tech stack:
     * AWS S3
     * AWS Certificate Manager
 * CI/CD Pipeline method: 
-    * Terraform
-    * GitHub Actions
+    * Terraform (_for infrastructure management_)
+    * GitHub Actions (_for updating website content_)
 * Website Framework:
     * [Hugo](https://gohugo.io)
     * [Template](https://themes.gohugo.io/themes/hugo-theme-hello-friend-ng/#how-to-edit-the-theme)
