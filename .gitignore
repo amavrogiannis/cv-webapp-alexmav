@@ -1,2 +1,5 @@
 
 .vscode/settings.json
+infra/envs/envs.sh
+**/.terraform.lock.hcl
+**/.terraform/**
