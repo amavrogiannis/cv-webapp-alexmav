@@ -7,11 +7,13 @@ on:
     - main
    paths:
     - infra/envs/prod/**
+    - infra/modules/**
  pull_request:
    branches:
     - main
    paths:
     - infra/envs/prod/**
+    - infra/modules/**
  
 env:
  # verbosity setting for Terraform logs
