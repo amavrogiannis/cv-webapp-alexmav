@@ -5,40 +5,41 @@ date = "2022-04-17"
   name = "AlexMav"
 +++
 
-As you can see the operation for this website, is fast, secure and reliable. The structure was simple, which I use Hugo configuration to apply my changes and then Huogo takes over in loading the template and make it look nice. 
+As you can see the operation for this website, is fast, secure and reliable. The structure was simple; I used Hugo to build the website, resulting to what you can see now. 
 
-The stack behind the scenes, is AWS. In this stage, the site is hosted via AWS S3 Static hosting but the complicated part comes from the CI/CD pipeline being set up. 
+## How is it hosted
+To host a static website is pretty much straight forward using AWS Services to make this possible and cheapest possible way.
 
-What is the saving cost, by automating it? 
+How is it done and what considerations did I take?
 
-Lets overview it by giving an example how its done manually: 
-* Create GitHub repo with a config file, then clone remote the theme repo. 
+Let's first summarise how I've did it manually: 
+* Launch the code using VSCode (_"I know"_). 
 * Configure the website as you want, adding the content and making changes. 
 * Test the website deploying it to your localhost. 
 * Export the website to HTML and then upload the HTML files on AWS S3. 
-    * AWS S3 bucket and CloudFront is configured before hand. Change will apply when uploading the content. 
-* Then the CloudFront will pickup the new HTML files uploaded to s3 and you will get deployed to the world wide web (www). 
+    * Did it via the `aws` command, before that, it was drag and drop.
+* The website will then be published. 
 
-How does automation simplifies the process, and saves time: 
+Instead, I automated it and I love it. Here's how: 
 * Clone repository, create the config file and apply your changes. 
-* Upload your config file changes on GitHub. 
+* Commit and push the config file changes on GitHub. 
 * CI/CD (GitHub Actions) YAML specifies the above steps: 
     * Checkout code
     * Build the website with Hugo plugin (marketplace)
     * Export and zip html files and upload to artifacts
     * Pull the zip folder artifacts and export the files and sync them to S3
 
-Here is an architecture image that you might find useful: 
-![arch_pic](/post/arch_pic.png)
+Here is an end-to-end (E2E) architecture image that you might find useful: 
+![arch_pic](/post/e2e_solution.png)
 
 
 Categorised Tech stack: 
 
 * Hosting this website using AWS:
-    * Route 53
-    * CloudFront
-    * S3 Bucket
-    * Certificate Manager
+    * AWS Route 53
+    * AWS CloudFront
+    * AWS S3
+    * AWS Certificate Manager
 * CI/CD Pipeline method: 
     * Terraform
     * GitHub Actions
