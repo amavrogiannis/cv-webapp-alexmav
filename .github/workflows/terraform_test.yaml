@@ -6,7 +6,7 @@ on:
    - feature/**
    - main
    paths:
-    - infra/prod/**
+    - infra/test/**
  pull_request:
    branches:
    - main
