@@ -47,3 +47,4 @@ Categorised Tech stack:
     * [Template](https://themes.gohugo.io/themes/hugo-theme-hello-friend-ng/#how-to-edit-the-theme)
 
 Here is a link to my [GitHub](https://github.com/amavrogiannis).
+
