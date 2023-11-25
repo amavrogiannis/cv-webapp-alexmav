@@ -6,12 +6,12 @@ on:
     - feature/**
     - main
    paths:
-    - infra/prod/**
+    - infra/envs/prod/**
  pull_request:
    branches:
     - main
    paths:
-    - infra/prod/**
+    - infra/envs/prod/**
  
 env:
  # verbosity setting for Terraform logs
@@ -28,7 +28,7 @@ jobs:
      run:
        shell: bash
        # We keep Terraform files in the terraform directory.
-       working-directory: infra/prod/**
+       working-directory: infra/envs/prod/**
  
    steps:
      - name: Checkout the repository to the runner
