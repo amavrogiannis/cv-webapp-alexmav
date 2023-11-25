@@ -6,12 +6,12 @@ name: CV Website Workflow
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ main, dev/** ]
+    branches: [ main ]
     paths:
       - content/**
       - themes/**
   pull_request:
-    branches: [ main, dev/** ]
+    branches: [ main ]
     paths:
       - content/**
       - themes/**
