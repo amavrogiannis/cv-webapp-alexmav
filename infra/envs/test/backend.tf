@@ -23,8 +23,8 @@ terraform {
 
 provider "aws" {
   # alias = "main"
-  region  = var.REGION
-  profile = var.PROFILE
+  region  = "eu-west-1"
+  # profile = var.PROFILE
   default_tags {
     tags = {
       Terraform    = "TRUE"
@@ -35,5 +35,5 @@ provider "aws" {
 provider "aws" {
   alias = "virginia"
   region  = "us-east-1"
-  profile = var.PROFILE_US
+  # profile = var.PROFILE_US
 }
