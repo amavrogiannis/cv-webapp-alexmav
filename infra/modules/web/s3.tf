@@ -12,7 +12,7 @@ locals {
 
 resource "aws_s3_bucket" "this" {
   bucket = var.bucket_name
-  tags = local.tags
+  tags   = local.tags
 }
 
 resource "aws_s3_bucket_ownership_controls" "this" {

@@ -5,10 +5,14 @@ data "aws_acm_certificate" "this" {
 }
 
 resource "aws_cloudfront_origin_access_identity" "this" {
-  comment  = var.comments
+  comment = var.comments
 }
 
 resource "aws_cloudfront_distribution" "this" {
+  enabled = true
+
+  continuous_deployment_policy_id = aws_cloudfront_continuous_deployment_policy.cdn_policy.id
+
   origin {
     domain_name = aws_s3_bucket.this.bucket_regional_domain_name
     origin_id   = local.s3_origin_id
@@ -17,7 +21,6 @@ resource "aws_cloudfront_distribution" "this" {
       origin_access_identity = aws_cloudfront_origin_access_identity.this.cloudfront_access_identity_path
     }
   }
-  enabled             = true
   is_ipv6_enabled     = true
   comment             = var.comments
   default_root_object = "index.html"
@@ -108,4 +111,25 @@ resource "aws_cloudfront_distribution" "this" {
 
 output "cloudfront_domain_name" {
   value = aws_cloudfront_distribution.this.domain_name
+}
+
+// STAGING Configuration
+data "aws_cloudfront_distribution" "staging" {
+  id = var.staging_cloudfront_id
+}
+
+resource "aws_cloudfront_continuous_deployment_policy" "cdn_policy" {
+  enabled = var.enable_staging_cloudfront
+
+  staging_distribution_dns_names {
+    items    = [data.aws_cloudfront_distribution.staging.domain_name]
+    quantity = 1
+  }
+
+  traffic_config {
+    type = "SingleWeight"
+    single_weight_config {
+      weight = "0.01"
+    }
+  }
 }

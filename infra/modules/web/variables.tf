@@ -30,3 +30,15 @@ variable "enable_website" {
   description = "Define the resource_group tag"
   type        = bool
 }
+
+variable "enable_staging_cloudfront" {
+  description = "Confirm this is CloudFront staging env. True or False"
+  type        = bool
+
+}
+
+variable "staging_cloudfront_id" {
+  description = "Paste the CloudFront ID to utlise it for the Continuous Policy"
+  type        = string
+  default     = null
+}
