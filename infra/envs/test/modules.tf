@@ -5,6 +5,8 @@ module "testalexmav_web" {
 
   enable_website = true
 
+  enable_staging_cloudfront = false
+
   # Tags
   service_group = "Test_Website"
   environment   = "Development"
