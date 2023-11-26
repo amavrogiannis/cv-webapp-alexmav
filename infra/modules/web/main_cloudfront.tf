@@ -5,10 +5,14 @@ data "aws_acm_certificate" "this" {
 }
 
 resource "aws_cloudfront_origin_access_identity" "this" {
-  comment  = var.comments
+  comment = var.comments
 }
 
 resource "aws_cloudfront_distribution" "this" {
+  enabled = true
+
+  continuous_deployment_policy_id = aws_cloudfront_continuous_deployment_policy.cdn_policy.id
+
   origin {
     domain_name = aws_s3_bucket.this.bucket_regional_domain_name
     origin_id   = local.s3_origin_id
@@ -17,7 +21,6 @@ resource "aws_cloudfront_distribution" "this" {
       origin_access_identity = aws_cloudfront_origin_access_identity.this.cloudfront_access_identity_path
     }
   }
-  enabled             = true
   is_ipv6_enabled     = true
   comment             = var.comments
   default_root_object = "index.html"
@@ -95,7 +98,12 @@ resource "aws_cloudfront_distribution" "this" {
       ]
     }
   }
-  tags = local.tags
+  tags   = merge(
+    local.tags,
+    {
+      Environment   = "${var.environment}"
+    }
+  )
 
   #First, create certificate, before pasting the ARN here. 
   viewer_certificate {
