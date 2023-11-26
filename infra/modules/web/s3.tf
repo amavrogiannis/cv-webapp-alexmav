@@ -2,14 +2,17 @@
 ############## S3 Bucket Config #############################
 #############################################################
 
+locals {
+  tags = {
+    Environment   = "${var.environment}"
+    Service_Group = "${var.service_group}"
+  }
+  s3_origin_id = "Application"
+}
+
 resource "aws_s3_bucket" "this" {
   bucket = var.bucket_name
-  tags   = merge(
-    local.tags,
-    {
-      Environment   = "${var.environment}"
-    }
-  )
+  tags = local.tags
 }
 
 resource "aws_s3_bucket_ownership_controls" "this" {
