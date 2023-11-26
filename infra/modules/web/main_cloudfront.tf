@@ -98,7 +98,12 @@ resource "aws_cloudfront_distribution" "this" {
       ]
     }
   }
-  tags = local.tags
+  tags   = merge(
+    local.tags,
+    {
+      Environment   = "${var.environment}"
+    }
+  )
 
   #First, create certificate, before pasting the ARN here. 
   viewer_certificate {
@@ -111,25 +116,4 @@ resource "aws_cloudfront_distribution" "this" {
 
 output "cloudfront_domain_name" {
   value = aws_cloudfront_distribution.this.domain_name
-}
-
-// STAGING Configuration
-data "aws_cloudfront_distribution" "staging" {
-  id = var.staging_cloudfront_id
-}
-
-resource "aws_cloudfront_continuous_deployment_policy" "cdn_policy" {
-  enabled = var.enable_staging_cloudfront
-
-  staging_distribution_dns_names {
-    items    = [data.aws_cloudfront_distribution.staging.domain_name]
-    quantity = 1
-  }
-
-  traffic_config {
-    type = "SingleWeight"
-    single_weight_config {
-      weight = "0.01"
-    }
-  }
 }

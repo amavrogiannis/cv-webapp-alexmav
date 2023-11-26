@@ -22,7 +22,7 @@ terraform {
 }
 
 provider "aws" {
-  # alias = "main"
+
   region = "eu-west-1"
   # profile = var.PROFILE
   default_tags {

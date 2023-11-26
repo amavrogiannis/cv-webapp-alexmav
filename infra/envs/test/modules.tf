@@ -1,17 +1,18 @@
-module "testalexmav_web" {
-  source = "../../modules/web"
+# module "testalexmav_web" {
+#   source = "../../modules/web"
 
-  bucket_name = "test.alexmav.co.uk"
+#   bucket_name = "test.alexmav.co.uk"
 
-  enable_website = true
+#   enable_website = true
 
-  enable_staging_cloudfront = false
+#   enable_staging_cloudfront = false
+#   staging_cloudfront_id = null
 
-  # Tags
-  service_group = "Test_Website"
-  environment   = "Development"
+#   # Tags
+#   service_group = "Test_Website"
+#   environment   = "Development"
 
-  providers = {
-    aws.virginia = aws.virginia
-  }
-}
+#   providers = {
+#     aws.virginia = aws.virginia
+#   }
+# }

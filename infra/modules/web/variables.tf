@@ -8,15 +8,24 @@ variable "environment" {
   type        = string
 }
 
-variable "service_group" {
-  description = "Define the resource_group tag"
-  type        = string
+variable "environment_test" {
+  description = "Define test env"
+  type = string
+  default = null
+  
 }
 
 ### General comments for all ###
 variable "comments" {
   type    = string
   default = "Managed Terraform Resource"
+}
+
+// Fetch certificate data - domain name required
+variable "primary_domain_certificate" {
+  description = "Need to enter the domain name, which the CloudFront will inherit the certificate from."
+  type = string
+  default = null
 }
 
 
@@ -31,14 +40,13 @@ variable "enable_website" {
   type        = bool
 }
 
+// Staging config
+variable "staging_domain" {
+  description = "Give a name on staging bucket"
+  type        = string
+}
 variable "enable_staging_cloudfront" {
   description = "Confirm this is CloudFront staging env. True or False"
   type        = bool
-
-}
-
-variable "staging_cloudfront_id" {
-  description = "Paste the CloudFront ID to utlise it for the Continuous Policy"
-  type        = string
-  default     = null
+  default = false
 }
