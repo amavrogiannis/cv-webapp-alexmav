@@ -62,7 +62,7 @@ resource "aws_s3_bucket_policy" "this_staging" {
   count = var.enable_staging_cloudfront ? 1 : 0
 
   bucket = aws_s3_bucket.this_staging.id
-  policy = data.aws_iam_policy_document.this_staging.json
+  policy = data.aws_iam_policy_document.this_staging_policy.json
 
   depends_on = [data.aws_iam_policy_document.this_staging_policy]
 }
