@@ -5,6 +5,7 @@ on:
    branches:
     - feat/**
     - fix/**
+    - main
    paths:
     - infra/envs/test/**
     - infra/modules/**
