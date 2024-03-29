@@ -3,7 +3,6 @@ name: "Development - Terraform Infrastructure"
 on:
  push:
    branches:
-    - feature/**
     - main
    paths:
     - infra/envs/test/**
