@@ -97,8 +97,8 @@ resource "aws_cloudfront_distribution" "this" {
 
   #First, create certificate, before pasting the ARN here. 
   viewer_certificate {
-    acm_certificate_arn            = data.aws_acm_certificate.this.arn
-    cloudfront_default_certificate = false
+    # acm_certificate_arn            = data.aws_acm_certificate.this.arn
+    cloudfront_default_certificate = true
     minimum_protocol_version       = "TLSv1.2_2021"
     ssl_support_method             = "sni-only"
   }
