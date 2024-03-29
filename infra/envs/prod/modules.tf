@@ -14,5 +14,4 @@ module "cvalexmav_web" {
   providers = {
     aws.virginia = aws.virginia
   }
-
 }
