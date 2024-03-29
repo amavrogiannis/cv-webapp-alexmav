@@ -5,11 +5,10 @@ module "testalexmav_web" {
 
   enable_website = true
 
+  domain_acm = "cv.alexmav.co.uk"
+
   # Tags
   service_group = "Test_Website"
   environment   = "Development"
 
-  providers = {
-    aws.virginia = aws.virginia
-  }
 }
