@@ -3,14 +3,13 @@ name: "Production - Terraform Infrastructure"
 on:
  push:
    branches:
-    - feature/**
     - main
    paths:
     - infra/envs/prod/**
     - infra/modules/**
  pull_request:
    branches:
-    - main
+    - prod
    paths:
     - infra/envs/prod/**
     - infra/modules/**
