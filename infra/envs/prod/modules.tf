@@ -11,4 +11,8 @@ module "cvalexmav_web" {
   service_group = "CV_Website"
   environment   = "Production"
 
+  providers = {
+    aws.virginia = aws.virginia
+  }
+
 }
