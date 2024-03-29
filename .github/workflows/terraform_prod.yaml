@@ -3,7 +3,7 @@ name: "Production - Terraform Infrastructure"
 on:
  push:
    branches:
-    - main
+    - prod
    paths:
     - infra/envs/prod/**
     - infra/modules/**
