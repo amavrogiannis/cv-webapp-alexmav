@@ -23,7 +23,7 @@ env:
  
 jobs:
  terraform:
-   name: "Development - Terraform Infrastructure"
+   name: "Production - Terraform Infrastructure"
    runs-on: ubuntu-latest
    defaults:
      run:
