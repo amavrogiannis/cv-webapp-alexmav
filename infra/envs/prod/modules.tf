@@ -5,6 +5,8 @@ module "cvalexmav_web" {
 
   enable_website = true
 
+  domain_acm = "cv.alexmav.co.uk"
+
   # Tags
   service_group = "CV_Website"
   environment   = "Production"

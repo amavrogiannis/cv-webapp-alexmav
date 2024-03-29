@@ -1,5 +1,5 @@
 data "aws_acm_certificate" "this" {
-  domain = "alexmav.co.uk"
+  domain = var.domain_acm
 }
 
 resource "aws_cloudfront_origin_access_identity" "this" {

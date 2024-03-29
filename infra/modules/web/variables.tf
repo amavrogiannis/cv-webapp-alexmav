@@ -30,3 +30,9 @@ variable "enable_website" {
   description = "Define the resource_group tag"
   type        = bool
 }
+
+// Domain 
+variable "domain_acm" {
+  description = "Provide the domain name to fetch ACM"
+  type = string
+}
