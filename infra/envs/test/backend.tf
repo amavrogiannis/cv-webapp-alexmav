@@ -24,7 +24,7 @@ terraform {
 provider "aws" {
   # alias = "main"
   region  = "eu-west-1"
-  # profile = var.PROFILE
+  # profile = "alexm"
   default_tags {
     tags = {
       Terraform    = "TRUE"

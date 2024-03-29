@@ -1,5 +1,7 @@
 data "aws_acm_certificate" "this" {
   domain = var.domain_acm
+
+  provider = aws.virginia
 }
 
 resource "aws_cloudfront_origin_access_identity" "this" {
@@ -80,7 +82,7 @@ resource "aws_cloudfront_distribution" "this" {
 
     min_ttl                = 0
     default_ttl            = 3600
-    max_ttl                = 7200
+    max_ttl                = 86400
     compress               = true
     viewer_protocol_policy = "redirect-to-https"
   }
@@ -97,10 +99,10 @@ resource "aws_cloudfront_distribution" "this" {
 
   #First, create certificate, before pasting the ARN here. 
   viewer_certificate {
-    # acm_certificate_arn            = data.aws_acm_certificate.this.arn
-    cloudfront_default_certificate = true
-    # minimum_protocol_version       = "TLSv1.2_2021"
-    # ssl_support_method             = "sni-only"
+    acm_certificate_arn            = data.aws_acm_certificate.this.arn
+    cloudfront_default_certificate = false
+    minimum_protocol_version       = "TLSv1.2_2021"
+    ssl_support_method             = "sni-only"
   }
 }
 
