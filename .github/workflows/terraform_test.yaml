@@ -24,7 +24,7 @@ env:
  
 jobs:
  terraform:
-   name: "Terraform Infrastructure Change Management"
+   name: "Development - Terraform Infrastructure"
    runs-on: ubuntu-latest
    defaults:
      run:

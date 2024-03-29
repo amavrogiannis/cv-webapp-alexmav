@@ -1,7 +1,5 @@
 data "aws_acm_certificate" "this" {
   domain = "alexmav.co.uk"
-
-  provider = aws.virginia
 }
 
 resource "aws_cloudfront_origin_access_identity" "this" {

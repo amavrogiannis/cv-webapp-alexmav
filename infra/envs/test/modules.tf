@@ -9,7 +9,4 @@ module "testalexmav_web" {
   service_group = "Test_Website"
   environment   = "Development"
 
-  providers = {
-    aws.virginia = aws.virginia
-  }
 }
