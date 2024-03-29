@@ -80,7 +80,7 @@ resource "aws_cloudfront_distribution" "this" {
 
     min_ttl                = 0
     default_ttl            = 3600
-    max_ttl                = 86400
+    max_ttl                = 7200
     compress               = true
     viewer_protocol_policy = "redirect-to-https"
   }
